@@ -1,0 +1,14 @@
+fr:
+  monday: "Lundi"
+  tuesday: "Mardi"
+  wednesday: "Mecredi"
+  thursday: "Jeudi"
+  friday: "Vendredi"
+  saturday: "Samedi"
+  sunday: "Dimanche"
+  opening_time: "Horaires"
+  shop_name: "Nom du magasin"
+  see_opening_times: "Voir les horaires"
+  list_shop: "Liste des magasins"
+  closed: "Fermé"
+

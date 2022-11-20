@@ -18,8 +18,6 @@ class OpeningTime < ApplicationRecord
     errors.add(:overlap, "There are an overlapping with other opening times")
   end
 
-  private
-
   def validate_hours
     valid_order_hours = start_date < end_date
     valid_duration = end_date - start_date > 1.minute

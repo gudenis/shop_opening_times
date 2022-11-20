@@ -1,0 +1,27 @@
+<h2><%= t('list_shop') %></h2>
+
+<table>
+  <thead>
+  <tr>
+    <th><%= t('shop_name') %></th>
+    <th><%= t('see_opening_times') %></th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @shops.each do |shop| %>
+    <tr>
+      <td><%= shop.name %></td>
+      <td>
+        <button>
+          <%= link_to t('opening_time'), shop %>
+        </button>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
+
