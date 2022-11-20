@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_17_171818) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_17_183303) do
+  create_table "opening_times", force: :cascade do |t|
+    t.integer "shop_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.index ["shop_id"], name: "index_opening_times_on_shop_id"
+  end
+
   create_table "shops", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
