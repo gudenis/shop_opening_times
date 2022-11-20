@@ -1,0 +1,16 @@
+<h2><%= @shop.name %></h2>
+<table>
+  <tbody>
+  <% @render_opening_times.each do |day_of_week, opening_times| %>
+    <tr class=<%= "strong" if @current_day_week == day_of_week %>>
+      <td><%= t('opening_time')+ ' :' if @current_day_week == day_of_week %></td>
+      <td><%= t(day_of_week) %></td>
+      <% if opening_times.empty? %>
+        <td><%= t('closed') %></td>
+      <% else %>
+        <td><%= format_opening_time(opening_times) %></td>
+      <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
