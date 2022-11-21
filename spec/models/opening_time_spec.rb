@@ -1,20 +1,21 @@
 require 'rails_helper'
 RSpec.describe OpeningTime, type: :model do
   let(:shop) { Shop.create!(name: "ShopTest") }
+  let(:date) {Time.new(2022, 11, 21, 9, 0, 0 )}
 
   describe 'valid presence field' do
     it 'should be valid' do
-      opening_time = OpeningTime.new(shop: shop, start_date: Time.now, end_date: Time.now + 2.hours)
+      opening_time = OpeningTime.new(shop: shop, start_date: date, end_date: date + 2.hours)
       expect(opening_time.valid?).to be(true)
     end
 
     it 'should not be valid, end_date missing' do
-      opening_time = OpeningTime.new(shop: shop, end_date: Time.now + 2.hours)
+      opening_time = OpeningTime.new(shop: shop, end_date: date + 2.hours)
       expect { opening_time.valid? }.to raise_error(NoMethodError) # validate broken
     end
 
     it 'should not be valid, start_date missing' do
-      opening_time = OpeningTime.new(shop: shop, start_date: Time.now)
+      opening_time = OpeningTime.new(shop: shop, start_date: date)
       expect { opening_time.valid? }.to raise_error(ArgumentError) # validate broken
     end
   end

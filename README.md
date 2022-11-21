@@ -17,4 +17,11 @@ To execute test use rspec : ```rails spec```
 ### 4.How to run service :
 To run the service use: ```rails s```
 
-To enjoy app you need to have ruby version 3.1.2 and follow 1, 2, and 3 and go to localhost:3000/shop
+To enjoy app you need to have ruby version 3.1.2 and follow 1, 2, and 4 and go to localhost:3000/fr/shop
+
+### 5.Internationalization
+To change locale please change it in the url : 
+- /fr/shop for french
+- /en/shop for english
+- feel free to add locale in config/locales with new yml language file, in routes.rb and in application.rb 
+
