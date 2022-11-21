@@ -17,9 +17,11 @@ class Shop < ApplicationRecord
   end
 
   private
+
   def find_opening_times_with_depth(day, day_depth)
     opening_times.where(end_date: day..day + day_depth) || []
   end
+
   def init_hash_day_of_week
     {}.tap do |hash|
       DAY_OF_WEEK.rotate(Date.current.wday).each do |day|
